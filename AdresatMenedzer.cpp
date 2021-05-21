@@ -1,38 +1,30 @@
 #include "AdresatMenedzer.h"
 
-int AdresatMenedzer::pobierzIdOstatniegoAdresata()
-{
-    idOstatniegoAdresata = adresaci.size();
 
-}
-
-int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
+int AdresatMenedzer::dodajAdresata()
 {
     Adresat adresat;
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    if (idZalogowanegoUzytkownika > 0)
-{
-    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika);
+
+    adresat = podajDaneNowegoAdresata();
 
     adresaci.push_back(adresat);
-    plikZAdresatami.dopiszAdresataDoPliku(adresat);
+    if (plikZAdresatami.dopiszAdresataDoPliku(adresat))
+        cout << "Nowy adresat zostal dodany" <<endl;
+    else
+
+    cout<<"Blad. Nie udalo sie dodac nowego adresata do pliku" << endl;
+    system ("pause");
 
 }
-else
-{
-    cout<<"Nie zalogowano zadnego uzytkownika"<<endl;
-}
-}
-Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
+Adresat AdresatMenedzer::podajDaneNowegoAdresata()
 {
     Adresat adresat;
 
-    pobierzIdOstatniegoAdresata();
+    adresat.ustawId((plikZAdresatami.pobierzIdOstatniegoAdresata()+1));
 
-    adresat.ustawId(++idOstatniegoAdresata);
-
-    adresat.ustawIdZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+    adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
     adresat.ustawImie(metodyPomocnicze.wczytajLinie());
@@ -55,22 +47,17 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
 
 }
 
-void AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
-{
-adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
-}
 
-void AdresatMenedzer::wyswietlWszystkichAdresatow(int idZalogowanegoUzytkownika)
+void AdresatMenedzer::wyswietlWszystkichAdresatow()
 {
-    wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
     system("cls");
     if (!adresaci.empty())
     {
         cout << "             >>> ADRESACI <<<" << endl;
         cout << "-----------------------------------------------" << endl;
-        for (int i = 0; i<adresaci.size();i++)
+        for (vector <Adresat> :: iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
         {
-            wyswietlDaneAdresata(i);
+            wyswietlDaneAdresata(*itr);
         }
         cout << endl;
     }
@@ -80,14 +67,12 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow(int idZalogowanegoUzytkownika)
     }
     system("pause");
 }
-
-void AdresatMenedzer::wyswietlDaneAdresata(int i)
+void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
 {
-
-    cout << endl << "Id:         " << adresaci[i].pobierzId() << endl;
-    cout << "Imie:               " << adresaci[i].pobierzImie() << endl;
-    cout << "Nazwisko:           " << adresaci[i].pobierzNazwisko()<< endl;
-    cout << "Numer telefonu:     " << adresaci[i].pobierzNumerTelefonu() << endl;
-    cout << "Email:              " << adresaci[i].pobierzEmail() << endl;
-    cout << "Adres:              " << adresaci[i].pobierzAdres() << endl;
+    cout << endl << "Id:                 " << adresat.pobierzId() << endl;
+    cout << "Imie:               " << adresat.pobierzImie()<< endl;
+    cout << "Nazwisko:           " << adresat.pobierzNazwisko() << endl;
+    cout << "Numer telefonu:     " << adresat.pobierzNumerTelefonu ()<< endl;
+    cout << "Email:              " << adresat.pobierzEmail() << endl;
+    cout << "Adres:              " << adresat.pobierzAdres ()<< endl;
 }

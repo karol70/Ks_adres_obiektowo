@@ -8,31 +8,30 @@
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
 #include "MetodyPomocnicze.h"
-#include "UzytkownikMenedzer.h"
-
 
 
 using namespace std;
 
 class AdresatMenedzer
 {
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     vector<Adresat> adresaci;
-    int idOstatniegoAdresata;
-    int pobierzIdOstatniegoAdresata();
-    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
-    UzytkownikMenedzer uzytkownikMenedzer(string nazwaPlikuZUzytkownikami);
+
+    Adresat podajDaneNowegoAdresata();
     PlikZAdresatami plikZAdresatami;
     MetodyPomocnicze metodyPomocnicze;
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
-    void wyswietlDaneAdresata(int i);
+
+    void wyswietlDaneAdresata(Adresat adresat);
 
 public:
 
-    AdresatMenedzer(){}
-    int dodajAdresata(int idZalogowanegoUzytkownika);
+    AdresatMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
+    :plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
+    {
+        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    }
+    int dodajAdresata();
     void wyswietlWszystkichAdresatow();
-
-    void wyswietlWszystkichAdresatow(int idZalogowanegoUzytkownika);
 
 };
 
