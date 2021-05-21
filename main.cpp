@@ -5,25 +5,12 @@ using namespace std;
 
 int main()
 {
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt","Adresaci.txt");
     ksiazkaAdresowa.logowanieUzytkownika();
-    ksiazkaAdresowa.wyswietlWszystkichAdresatow(ksiazkaAdresowa.odczytajIdZalogowanegoUzytkownika());
-  //  ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
-  //  ksiazkaAdresowa.wylogowanieUzytkownika();
-   // ksiazkaAdresowa.dodajAdresata(ksiazkaAdresowa.odczytajIdZalogowanegoUzytkownika());
-  //  ksiazkaAdresowa.dodajAdresata(ksiazkaAdresowa.odczytajIdZalogowanegoUzytkownika());
-   // ksiazkaAdresowa.dodajAdresata(ksiazkaAdresowa.odczytajIdZalogowanegoUzytkownika());
-  //  ksiazkaAdresowa.wylogowanieUzytkownika();
-  //  ksiazkaAdresowa.logowanieUzytkownika();
-  // ksiazkaAdresowa.dodajAdresata(ksiazkaAdresowa.odczytajIdZalogowanegoUzytkownika());
-  //  ksiazkaAdresowa.dodajAdresata(ksiazkaAdresowa.odczytajIdZalogowanegoUzytkownika());
-  //  ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-  //  ksiazkaAdresowa.rejestracjaUzytkownika();
-
-
-   // ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-
-
+    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+    ksiazkaAdresowa.wylogowanieUzytkownika();
+    ksiazkaAdresowa.logowanieUzytkownika();
+    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
 
     return 0;
 }

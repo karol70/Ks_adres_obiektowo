@@ -1,9 +1,6 @@
 #include "UzytkownikMenedzer.h"
 
-int UzytkownikMenedzer::odczytajIdZalogowanegoUzytkownika()
-{
-    return idZalogowanegoUzytkownika;
-}
+
 
 void UzytkownikMenedzer::rejestracjaUzytkownika()
 {
@@ -75,11 +72,6 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
         }
 }
 
-void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
-{
-   uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
-
 int UzytkownikMenedzer::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;
@@ -123,7 +115,9 @@ int UzytkownikMenedzer::logowanieUzytkownika()
 
 void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
 {
-    string noweHaslo = "";
+    if (idZalogowanegoUzytkownika > 0 )
+    {
+      string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
     noweHaslo = metodyPomocnicze.wczytajLinie();
 
@@ -139,17 +133,28 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
         }
     }
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+    }
+    else
+    {
+        cout <<"Aby zmienic haslo, nalezy sie najpierw zalogowac. " << endl;
+        system("pause");
+    }
 }
 
-   int UzytkownikMenedzer::wylogowanieUzytkownika()
+void UzytkownikMenedzer::wylogowanieUzytkownika()
    {
     idZalogowanegoUzytkownika = 0;
-    cout << "Wylogowano";
-    system("pause");
-    return idZalogowanegoUzytkownika;
-
    }
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
+{
+    if (idZalogowanegoUzytkownika > 0)
+        return true;
+    else
+        return false;
+}
 
-
-
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+}
 

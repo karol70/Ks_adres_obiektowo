@@ -51,12 +51,12 @@
     {
         return adres;
     }
-    void Adresat::ustawIdZalogowanegoUzytkownika(int id)
+    void Adresat::ustawIdUzytkownika(int id)
     {
-        idZalogowanegoUzytkownika = id;
+        idUzytkownika = id;
     }
 
     int Adresat::pobierzIdUzytkownika()
     {
-        return idZalogowanegoUzytkownika;
+        return idUzytkownika;
     }
