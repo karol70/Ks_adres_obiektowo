@@ -1,9 +1,5 @@
-3|4|Ditu|123|asd|a|sd123|
 4|4|Asdasd|123|as|da|2333|
 5|1|Karol|Doo|123|123|123|
-6|1|Karol|Weerrr|12525|12353|1asd|
 7|1|Darek|Weafs|123|sad|213|
-10|3|Dorotka|Adasd|123|as|d1|
-11|1|Dorotka|Awe|132|123|ad|
-12|1|Dorotka|Asdad|123123|das|23|
+10|3|Doti|Wegrzyn|725660129|as|d1|
 13|1|Karo|213asd|12sd|123||

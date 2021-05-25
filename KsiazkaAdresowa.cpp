@@ -74,4 +74,8 @@ void KsiazkaAdresowa::wylogowanieUzytkownika()
      adresatMenedzer -> usunWybranegoAdresataZPliku();
  }
 
+ void KsiazkaAdresowa::edytujAdresata()
+ {
+     adresatMenedzer -> edytujAdresata();
+ }
 
