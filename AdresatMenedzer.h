@@ -22,6 +22,8 @@ class AdresatMenedzer
     MetodyPomocnicze metodyPomocnicze;
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
     void wyswietlDaneAdresata(Adresat adresat);
+    int podajIdWybranegoAdresata();
+    char wybierzOpcjeZMenuEdycja();
 
 public:
 
@@ -35,6 +37,7 @@ public:
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
     void usunWybranegoAdresataZPliku();
+    void edytujAdresata();
 
 };
 

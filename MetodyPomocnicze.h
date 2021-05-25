@@ -13,6 +13,8 @@ public:
      string wczytajLinie();
      string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
      static int konwersjaStringNaInt(string liczba);
+     int wczytajLiczbeCalkowita();
+     char wczytajZnak();
 
 
 
