@@ -54,14 +54,16 @@ vector<Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(i
     fstream plikTekstowy;
     plikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
 
-    if (plikTekstowy.good() == true) {
-        while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami)) {
+    if (plikTekstowy.good() == true)
+    {
+        while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
+        {
             if(idZalogowanegoUzytkownika == pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami)) {
                 adresat = pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami);
                 adresaci.push_back(adresat);
             }
+            daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
         }
-        daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
         plikTekstowy.close();
     }
     if (daneOstaniegoAdresataWPliku !="") {
@@ -145,11 +147,13 @@ void PlikZAdresatami::usunWybranegoAdresataZPliku(int idUsuwanegoAdresata) {
     tymczasowyPlikTekstowy.open("tymczasowyPlikTekstowy.txt", ios::out | ios::app);
 
 
-    if (plikTekstowy.good() == true) {
+    if (plikTekstowy.good() == true)
+        {
         while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
             {
             daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
-            if (idUsuwanegoAdresata != pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku)) {
+            if (idUsuwanegoAdresata != pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku))
+            {
 
                 if (tymczasowyPlikTekstowy.good() == true)
                     {
@@ -192,11 +196,13 @@ void PlikZAdresatami::zaktualizujDaneWybranegoAdresata(Adresat adresat)
 
     liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
 
-    if (plikTekstowy.good() == true) {
+    if (plikTekstowy.good() == true)
+        {
         while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
             {
             daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
-            if (adresat.pobierzId() != pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku)) {
+            if (adresat.pobierzId() != pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku))
+            {
 
                 if (tymczasowyPlikTekstowy.good() == true)
                     {
