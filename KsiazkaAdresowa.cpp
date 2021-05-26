@@ -44,7 +44,7 @@ void KsiazkaAdresowa::wylogowanieUzytkownika()
      }
      else
      {
-     cout << "Aby dodaæ adresata, nalezy najpierw sie zalogowac" << endl;
+     cout << "Aby dodac adresata, nalezy najpierw sie zalogowac" << endl;
      system("pause");
      }
 
