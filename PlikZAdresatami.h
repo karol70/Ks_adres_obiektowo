@@ -5,6 +5,7 @@
 #include <fstream>
 #include <cstdlib>
 
+#include "plikTekstowy.h"
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
 #include "UzytkownikMenedzer.h"
@@ -12,15 +13,13 @@
 
 using namespace std;
 
-class PlikZAdresatami
+class PlikZAdresatami : public PlikTekstowy
 {
 
-
-    const string NAZWA_PLIKU_Z_ADRESATAMI;
     int idOstatniegoAdresata;
 
     MetodyPomocnicze metodyPomocnicze;
-    bool czyPlikJestPusty();
+
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami (string daneJednegoAdresataOddzielonePionowymiKreskami);
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
@@ -30,7 +29,7 @@ class PlikZAdresatami
     void usunPlik(string nazwaPlikuZRozszerzeniem);
 
 public:
-    PlikZAdresatami(string nazwaPlikuZAdresatami): NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
+    PlikZAdresatami(string nazwaPlikuZAdresatami): PlikTekstowy(nazwaPlikuZAdresatami)
     {
      idOstatniegoAdresata = 0;
     };

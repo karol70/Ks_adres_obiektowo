@@ -1,7 +1,9 @@
 4|4|Asdasd|123|as|da|2333|
 5|1|Karol|Doo|123|123|123|
-7|1|Darek|Weafs|123|sad|213|
 10|3|Doti|Wegrzyn|725660129|as|d1|
 13|1|Karo|213asd|12sd|123||
 14|3|Karo|Wree|12312313|asda|21asd|
 15|3|Dorot|Adsa|123|asd|13|
+16|3|Kolo|123|asd|ad|asd|
+17|3|Doti|We|a2131|asd|13|
+18|1|Zdzis|Wada|123|asd|123|
