@@ -9,12 +9,15 @@ int main()
     ksiazkaAdresowa.logowanieUzytkownika();
  //   ksiazkaAdresowa.usunAdresata();
    ksiazkaAdresowa.dodajAdresata();
-  //  ksiazkaAdresowa.dodajAdresata();
+   ksiazkaAdresowa.dodajAdresata();
    // ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
- /*   ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+ //   ksiazkaAdresowa.wyswietlWszystkichAdresatow();
     ksiazkaAdresowa.wylogowanieUzytkownika();
     ksiazkaAdresowa.logowanieUzytkownika();
+     ksiazkaAdresowa.dodajAdresata();
+    ksiazkaAdresowa.usunAdresata();
+
     ksiazkaAdresowa.wyswietlWszystkichAdresatow();
-*/
+
     return 0;
 }

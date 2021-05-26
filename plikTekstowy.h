@@ -5,10 +5,6 @@
 #include <fstream>
 #include <cstdlib>
 
-#include "Adresat.h"
-#include "MetodyPomocnicze.h"
-#include "UzytkownikMenedzer.h"
-
 using namespace std;
 
 class PlikTekstowy
