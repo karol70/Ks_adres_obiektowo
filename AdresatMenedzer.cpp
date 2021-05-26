@@ -151,15 +151,23 @@ void AdresatMenedzer::wyswietlIloscWyszukanychAdresatow(int iloscAdresatow)
 
  void AdresatMenedzer::usunWybranegoAdresataZPliku()
  {
+     system("cls");
+     cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
+
      int idWybranegoAdresata = podajIdWybranegoAdresata();
+     bool czyIstniejeAdresat;
      for (int i=0; i<adresaci.size();i++)
      {
          if (idWybranegoAdresata == adresaci[i].pobierzId())
          {
             plikZAdresatami.usunWybranegoAdresataZPliku(idWybranegoAdresata);
+            czyIstniejeAdresat = true;
          }
-         else
-            cout << "W ksiazce nie ma adresata o podanym ID.";
+     }
+     if (czyIstniejeAdresat==false)
+     {
+         cout<<"W ksiazce nie ma adresatow o podanym ID"<<endl;
+         system("pause");
      }
 
  }

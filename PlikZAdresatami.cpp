@@ -129,6 +129,8 @@ int PlikZAdresatami::pobierzIdOstatniegoAdresata() {
 }
 
 void PlikZAdresatami::usunWybranegoAdresataZPliku(int idUsuwanegoAdresata) {
+
+
     Adresat adresat;
     vector<Adresat> adresaci;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
@@ -159,8 +161,11 @@ void PlikZAdresatami::usunWybranegoAdresataZPliku(int idUsuwanegoAdresata) {
         tymczasowyPlikTekstowy.close();
         usunPlik(pobierzNazwePliku());
         zmienNazwePliku("tymczasowyPlikTekstowy.txt",pobierzNazwePliku());
-
+        cout << "Wybrany adresat zostal usuniety"<<endl;
+        system("pause");
     }
+
+
 void PlikZAdresatami::zmienNazwePliku(string staraNazwa, string nowaNazwa)
 {
     if (rename(staraNazwa.c_str(), nowaNazwa.c_str()) == 0) {}
